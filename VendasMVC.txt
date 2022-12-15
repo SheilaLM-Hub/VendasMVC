@@ -1,0 +1,17 @@
+Criar repositorio no github
+- vir na pasta e iniciar o git (Git Bash Here):
+>git init para iniciar o repositório na pasta
+>conferir se gerou a pasta .git
+> Ir no git hub clicar no botão Code e copiar a URL(https)
+>No git: git remote add origin e cola a url copiada
+- Com isso associa-se os dois repositórios.
+- Para puxar o arquivo do git hub para o projeto local:
+- renomear a sua branch local de master para main usando o comando:
+> git branch -m master main
+> git pull origin main
+- Verificar se o arquivo .gitgnore foi gerado na pasta
+- Salvar o progresso usando os comandos:
+> git add. enter e logo em seguida dizer o q foi feito: git commit -m "Nome da atualização"
+- Para enviar o prjeto para git hub: 
+>git push origin main
+> login e senha
