@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using VendasWebMVC.Models;
+using VendasWebMVC.Models.ViewModels;
 
 namespace VendasWebMVC.Controllers
 {
@@ -20,6 +21,13 @@ namespace VendasWebMVC.Controllers
 
         public IActionResult Index()
         {
+            return View();
+        }
+
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Aplicativo de vendas web MVC";
+            ViewData["email"] = "sheila@gmail.com";
             return View();
         }
 
