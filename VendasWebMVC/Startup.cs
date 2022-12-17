@@ -27,8 +27,12 @@ namespace VendasWebMVC
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<VendasWebMVCContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("VendasWebMVCContext")));
+            services.AddDbContext<VendasWebMVCContext>(opts => opts.UseMySQL(Configuration.GetConnectionString("VendasWebMVCContext")));
+        }
+
+        private ServiceLifetime UseMySql(string v)
+        {
+            throw new NotImplementedException();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
