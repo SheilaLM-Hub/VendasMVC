@@ -28,6 +28,8 @@ namespace VendasWebMVC
             services.AddControllersWithViews();
 
             services.AddDbContext<VendasWebMVCContext>(opts => opts.UseMySQL(Configuration.GetConnectionString("VendasWebMVCContext")));
+
+            services.AddScoped<SeedingService>();
         }
 
         private ServiceLifetime UseMySql(string v)
@@ -36,11 +38,12 @@ namespace VendasWebMVC
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SeedingService seedingService)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                seedingService.Seed();
             }
             else
             {
